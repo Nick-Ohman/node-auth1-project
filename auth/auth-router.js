@@ -8,7 +8,7 @@ router.post("/register", (req, res) => {
 
   const {username, password} = req.body;
 
-  //has user password
+  ///////////////has user password
   const rounds = process.env.HASH_ROUNDS || 8; // change to higher number in production
   const hash = bcryptjs.hashSync(password, rounds)
 
@@ -23,12 +23,13 @@ router.post("/login", (req, res) => {
 
   const {username, password} = req.body;
 
-  //verify user password
+  //////////verify user password
 
   Users.findBy({ username })
     .then(([user]) => {
       if(user && bcryptjs.compareSync(password, user.password)) {
-        res.status(200).json({ welcome: user.username })
+        req.session.user = { id: user.id, username: user.username }
+        res.status(200).json({ welcome: user.username , session: req.session })
       } else {
         res.status(401).json({you: "cannot pass"})
       }

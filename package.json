@@ -20,7 +20,9 @@
   "homepage": "https://github.com/Nick-Ohman/node-auth1-project#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "connect-session-knex": "^1.7.2",
     "express": "^4.17.1",
+    "express-session": "^1.17.1",
     "helmet": "^3.23.0",
     "knex": "^0.21.1",
     "sqlite3": "^4.2.0"
