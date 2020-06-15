@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/Nick-Ohman/node-auth1-project#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "express": "^4.17.1",
     "helmet": "^3.23.0",
     "knex": "^0.21.1",
